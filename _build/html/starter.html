@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Understanding Chowdhary and Assisi, 2019 &#8212; Chaos in Sudoku Networks</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bipartite networks from Chowdhary and Assisi, 2019" href="bipartite.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos in Sudoku Networks</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Understanding Chowdhary and Assisi, 2019
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bipartite.html">
+   Bipartite networks from Chowdhary and Assisi, 2019
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ch3rryblossom/sudoku-network/master?urlpath=tree/_build/starter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ch3rryblossom/sudoku-network"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ch3rryblossom/sudoku-network/issues/new?title=Issue%20on%20page%20%2Fstarter.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/starter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-do-list">
+   To-do list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-reciprocally-coupled-oscillators">
+   Two reciprocally coupled oscillators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports-init">
+     Imports/Init
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-reciprocally-coupled-excitatory-oscillators">
+     Two reciprocally coupled excitatory oscillators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-reciprocally-coupled-inhibitory-oscillators">
+     Two reciprocally coupled inhibitory oscillators
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Understanding Chowdhary and Assisi, 2019</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-do-list">
+   To-do list
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-reciprocally-coupled-oscillators">
+   Two reciprocally coupled oscillators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports-init">
+     Imports/Init
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-reciprocally-coupled-excitatory-oscillators">
+     Two reciprocally coupled excitatory oscillators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-reciprocally-coupled-inhibitory-oscillators">
+     Two reciprocally coupled inhibitory oscillators
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="understanding-chowdhary-and-assisi-2019">
+<h1>Understanding Chowdhary and Assisi, 2019<a class="headerlink" href="#understanding-chowdhary-and-assisi-2019" title="Permalink to this headline">#</a></h1>
+<section id="to-do-list">
+<h2>To-do list<a class="headerlink" href="#to-do-list" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Two reciprocally coupled <strong>excitatory</strong> oscillators</p>
+<ul class="simple">
+<li><p>(to observe synchrony)</p></li>
+</ul>
+</li>
+<li><p>Two reciprocally coupled <strong>inhibitory</strong> oscillators</p>
+<ul class="simple">
+<li><p>(to observe asynchrony)</p></li>
+</ul>
+</li>
+<li><p>Bipartite networks</p>
+<ol class="simple">
+<li><p>No within-group connections</p></li>
+<li><p>Complementary edges are excitatory connections</p></li>
+<li><p>Ratio of cumulative strength of excitation/inhibition is varied</p></li>
+</ol>
+</li>
+<li><p>Balanced sudoku network</p></li>
+</ol>
+</section>
+<section id="two-reciprocally-coupled-oscillators">
+<h2>Two reciprocally coupled oscillators<a class="headerlink" href="#two-reciprocally-coupled-oscillators" title="Permalink to this headline">#</a></h2>
+<section id="imports-init">
+<h3>Imports/Init<a class="headerlink" href="#imports-init" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       Cache size for target &#39;cython&#39;: 2030357406 MB.
+You can call clear_cache(&#39;cython&#39;) to delete all files from the cache or manually delete files in the &#39;C:\Users\admin\.cython\brian_extensions&#39; directory. [brian2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Constants</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">1.1</span><span class="o">/</span><span class="n">ms</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">ms</span>
+
+<span class="c1"># Non-dimensionalized constants</span>
+<span class="n">tp</span> <span class="o">=</span> <span class="n">tau</span><span class="o">/</span><span class="n">ms</span>
+<span class="n">curr</span> <span class="o">=</span> <span class="n">I</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">*</span><span class="n">ms</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">curr</span><span class="o">/</span><span class="n">g</span>
+
+<span class="c1"># equation (1)</span>
+<span class="n">eqs</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = I - gamma*v : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="c1"># equation (2) but with t replaced by (phi*tau/gamma) [para equation]</span>
+<span class="c1"># converted to D.E. by differentiation</span>
+<span class="c1"># dv/dt = (I/gamma) - v is the actual equation, but tau is introduced to keep the equation dimensionally consistent.</span>
+<span class="n">eqs2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">dv/dt = ((I/gamma) - v)/tau : 1</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample first spikes</span>
+
+<span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+
+<span class="n">G2</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">]</span>
+
+<span class="n">M1</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M2</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M2</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_7_0.png" src="_images/starter_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot(M1.t/ms, I/gamma(1-exp(-M1.t/tau)), &#39;C1--&#39;,label=&#39;Analytic&#39;)</span>
+<span class="c1"># Plotting the analytic solution</span>
+
+<span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+
+<span class="n">M1</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">S1</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="c1"># solution to du/dt = (I/gamma - U)/tau is:</span>
+<span class="c1"># I/gamma * (1 - exp(-t/tau))</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">(</span><span class="n">I</span><span class="o">/</span><span class="n">gamma</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">tau</span><span class="p">)),</span> <span class="s1">&#39;C1--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Analytic&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_8_0.png" src="_images/starter_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unconnected neurons</span>
+
+<span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+
+<span class="n">G2</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">]</span>
+
+<span class="c1"># S1 = Synapses(G1, G2, on_pre=&#39;v_post += 0.2&#39;)</span>
+<span class="c1"># S2 = Synapses(G2, G1, on_pre=&#39;v_post += 0.2&#39;)</span>
+
+<span class="c1"># S1.connect()</span>
+<span class="c1"># S2.connect()</span>
+
+<span class="n">M1</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Sp1</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+<span class="n">Sp2</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M2</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M2</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_9_0.png" src="_images/starter_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting phase separation between the two neurons over time</span>
+<span class="c1"># No connections, so stay constant over time</span>
+
+<span class="n">spikes</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:]))</span>
+<span class="n">Vals</span> <span class="o">=</span> <span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span> <span class="o">-</span> <span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">Vals</span><span class="o">/</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Interspike Intervals&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_10_0.png" src="_images/starter_10_0.png" />
+</div>
+</div>
+</section>
+<section id="two-reciprocally-coupled-excitatory-oscillators">
+<h3>Two reciprocally coupled excitatory oscillators<a class="headerlink" href="#two-reciprocally-coupled-excitatory-oscillators" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now with excitatory connections</span>
+<span class="c1"># Updates with a constant 0.1 addition upon spike.</span>
+
+<span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+
+<span class="n">G2</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">]</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post += 0.1&#39;</span><span class="p">)</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">G1</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post += 0.1&#39;</span><span class="p">)</span>
+
+<span class="n">S1</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S2</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">M1</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Sp1</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+<span class="n">Sp2</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M2</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M2</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_cython_magic_60ab4ec61e87dc94d960b1ac0f3ec312.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_60ab4ec61e87dc94d960b1ac0f3ec312.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_60ab4ec61e87dc94d960b1ac0f3ec312.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_ade7dbd6c50564eb99140fac5a1edda0.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_ade7dbd6c50564eb99140fac5a1edda0.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_ade7dbd6c50564eb99140fac5a1edda0.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_731108f96fc9e7fc616edf5cc6dd69b1.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_731108f96fc9e7fc616edf5cc6dd69b1.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_731108f96fc9e7fc616edf5cc6dd69b1.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_7422ce046d9f7c99ab3598707feae343.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_7422ce046d9f7c99ab3598707feae343.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_7422ce046d9f7c99ab3598707feae343.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_8577bca1fe606a24981ab1a550ed3d6f.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_8577bca1fe606a24981ab1a550ed3d6f.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_8577bca1fe606a24981ab1a550ed3d6f.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_fabf31b9b2a9a2ff8a9946c2bb3b0185.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_fabf31b9b2a9a2ff8a9946c2bb3b0185.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_fabf31b9b2a9a2ff8a9946c2bb3b0185.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_aefb46c6591e53b76a64c1edcd24320a.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_aefb46c6591e53b76a64c1edcd24320a.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_aefb46c6591e53b76a64c1edcd24320a.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_305ab14cafeb1ca805b736379f23d2c7.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_305ab14cafeb1ca805b736379f23d2c7.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_305ab14cafeb1ca805b736379f23d2c7.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_1b0e428c6c41445edcc873c98c949c7b.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_1b0e428c6c41445edcc873c98c949c7b.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_1b0e428c6c41445edcc873c98c949c7b.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_4c389b1fd1b7ad86b59be0ac431480df.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_4c389b1fd1b7ad86b59be0ac431480df.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_4c389b1fd1b7ad86b59be0ac431480df.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_e84a9a4a7b6637fc557084ca8935f6df.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_e84a9a4a7b6637fc557084ca8935f6df.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_e84a9a4a7b6637fc557084ca8935f6df.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_0e1614f842375d4174120f13e1a40fee.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_0e1614f842375d4174120f13e1a40fee.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_0e1614f842375d4174120f13e1a40fee.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_a6f2e89420784d2edcb685b8bd72feb6.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_a6f2e89420784d2edcb685b8bd72feb6.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_a6f2e89420784d2edcb685b8bd72feb6.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_cd0276c57d7f4cf811b3b081b9a55369.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_cd0276c57d7f4cf811b3b081b9a55369.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_cd0276c57d7f4cf811b3b081b9a55369.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_f2e6bf17d233eccb67b7eb650f383820.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_f2e6bf17d233eccb67b7eb650f383820.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_f2e6bf17d233eccb67b7eb650f383820.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_94245052d0e19cd7fee556a752a31f7b.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_94245052d0e19cd7fee556a752a31f7b.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_94245052d0e19cd7fee556a752a31f7b.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_86121f46fb0b6016347833db4ad0fd82.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_86121f46fb0b6016347833db4ad0fd82.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_86121f46fb0b6016347833db4ad0fd82.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_c7b65e4b0a50b38fd0ce7ddf23e0c7e0.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_c7b65e4b0a50b38fd0ce7ddf23e0c7e0.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_c7b65e4b0a50b38fd0ce7ddf23e0c7e0.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_ea3b968502102c6bccc93763a24a46b1.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_ea3b968502102c6bccc93763a24a46b1.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_ea3b968502102c6bccc93763a24a46b1.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_1f7bbc7cd6f168e54ec956583e60f391.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_1f7bbc7cd6f168e54ec956583e60f391.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_1f7bbc7cd6f168e54ec956583e60f391.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_08704b21c5fe7fcc17923cf72b8153a5.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_08704b21c5fe7fcc17923cf72b8153a5.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_08704b21c5fe7fcc17923cf72b8153a5.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_49055ff3d6d5bfb1867bb45340f56f59.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_49055ff3d6d5bfb1867bb45340f56f59.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_49055ff3d6d5bfb1867bb45340f56f59.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_2cd09e6f235a7125ce7fb82fe8dd89bd.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_2cd09e6f235a7125ce7fb82fe8dd89bd.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_2cd09e6f235a7125ce7fb82fe8dd89bd.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_07e6b7dfb5fb4034e3451851761fdcf9.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_07e6b7dfb5fb4034e3451851761fdcf9.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_07e6b7dfb5fb4034e3451851761fdcf9.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_277744e966469e1d4415cf318dff9245.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_277744e966469e1d4415cf318dff9245.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_277744e966469e1d4415cf318dff9245.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_52a4ab824f96eb069127b86920297c1e.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_52a4ab824f96eb069127b86920297c1e.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_52a4ab824f96eb069127b86920297c1e.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_d5e3c07fa7d30d3490d3416afda502cd.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_d5e3c07fa7d30d3490d3416afda502cd.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_d5e3c07fa7d30d3490d3416afda502cd.cp310-win_amd64.exp
+Generating code
+Finished generating code
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting separations again</span>
+
+<span class="n">spikes</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:]))</span>
+<span class="n">Vals</span> <span class="o">=</span> <span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span> <span class="o">-</span> <span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">Vals</span><span class="o">/</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Interspike Intervals&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_13_0.png" src="_images/starter_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analytic solution of eqs2 that we&#39;re using: U = (I/gamma)*(1-exp(-M1.t/tau))</span>
+<span class="c1"># function for this (computes analytic U for given value of t (phi)) =&gt; U_forward</span>
+<span class="c1"># === can i make brian compute this? ===</span>
+<span class="c1"># need to make a function that gives us the inverse, that is :</span>
+<span class="c1"># we know U at time point t_-, we update it with an excitatory U(t_-) + e, we need to find the &#39;timepoint at which U&#39; equals this update.</span>
+<span class="c1"># i.e. U^-1(U(t_-) + e)</span>
+<span class="c1"># on_pre=&#39;v_post = U_forward(min(U_inverse(v_post + e)), 1))&#39;</span>
+<span class="c1"># where U_inverse computes the time for U(t_-) + e and returns that time point. </span>
+<span class="c1"># inverse of a*(1 - e^(-bx)) is given by:  (1/b) * ln(1/(1 - x/a))</span>
+<span class="c1"># inverse of (I/gamma)*(1 - e^(-1/tau * t)) will be (tau) * ln(1/(1 - gamma*t/I))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">U_inverse</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+        <span class="n">inv</span> <span class="o">=</span> <span class="n">tp</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">g</span><span class="o">*</span><span class="n">v</span><span class="o">/</span><span class="n">curr</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">inv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">U_forward</span><span class="p">(</span><span class="n">phi</span><span class="p">):</span>
+        <span class="n">forw</span> <span class="o">=</span> <span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">phi</span><span class="o">/</span><span class="n">tp</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">forw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">U_inverse</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7
+ 1.8 1.9 2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.  3.1 3.2 3.3 3.4 3.5
+ 3.6 3.7 3.8 3.9 4.  4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.  5.1 5.2 5.3
+ 5.4 5.5 5.6 5.7 5.8 5.9 6.  6.1 6.2 6.3 6.4 6.5 6.6 6.7 6.8 6.9 7.  7.1
+ 7.2 7.3 7.4 7.5 7.6 7.7 7.8 7.9 8.  8.1 8.2 8.3 8.4 8.5 8.6 8.7 8.8 8.9
+ 9.  9.1 9.2 9.3 9.4 9.5 0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1
+ 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9
+ 3.  3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 4.  4.1 4.2 4.3 4.4 4.5 4.6 4.7
+ 4.8 4.9 5.  5.1 5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9 6.  6.1 6.2 6.3 6.4 6.5
+ 6.6 6.7 6.8 6.9 7.  7.1 7.2 7.3 7.4 7.5 7.6 7.7 7.8 7.9 8.  8.1 8.2 8.3
+ 8.4 8.5 8.6 8.7 8.8 8.9 9.  9.1 9.2 9.3 9.4 9.5 0.  0.1 0.2 0.3 0.4 0.5
+ 0.6 0.7] ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now with excitatory connections, according to update rule</span>
+
+<span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">exc</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+
+<span class="n">G2</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">]</span>
+
+<span class="c1"># S1 = Synapses(G1, G2, on_pre=&#39;v_post = U_forward(U_inverse(v_post + exc))&#39;)</span>
+<span class="c1"># S2 = Synapses(G2, G1, on_pre=&#39;v_post = U_forward(U_inverse(v_post + exc))&#39;)</span>
+<span class="c1"># Can&#39;t figure out how to call these functions to make the equations. Have instead just substituted the formula:</span>
+<span class="c1"># (i/g)*(1-exp(-(tp * log(1/(1 - g*(v_post + exc)/i)))/tp))</span>
+<span class="c1"># i/g has been defined as the &#39;out&#39; variable</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post = out * (1-exp(-(tp * log(1/(1 - g*(v_post + exc)/curr)))/tp))&#39;</span><span class="p">)</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">G1</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post = out * (1-exp(-(tp * log(1/(1 - g*(v_post + exc)/curr)))/tp))&#39;</span><span class="p">)</span>
+
+<span class="n">S1</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S2</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">M1</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Sp1</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+<span class="n">Sp2</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M2</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M2</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_18_0.png" src="_images/starter_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting separations for excitatory coupling</span>
+
+<span class="n">spikes</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:]))</span>
+<span class="n">Vals</span> <span class="o">=</span> <span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span> <span class="o">-</span> <span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">Vals</span><span class="o">/</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Interspike Intervals&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_19_0.png" src="_images/starter_19_0.png" />
+</div>
+</div>
+</section>
+<section id="two-reciprocally-coupled-inhibitory-oscillators">
+<h3>Two reciprocally coupled inhibitory oscillators<a class="headerlink" href="#two-reciprocally-coupled-inhibitory-oscillators" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now with inhibitory connections, according to update rule</span>
+
+<span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">exc</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">eqs2</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="s1">&#39;v&gt;1&#39;</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">&#39;v = 0&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+
+<span class="n">G2</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">]</span>
+
+<span class="c1"># replace (v_post + exc) with (v_post - exc)</span>
+
+<span class="n">S1</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post = out * (1-exp(-(tp * log(1/(1 - g*(v_post - exc)/curr)))/tp))&#39;</span><span class="p">)</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">G1</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">&#39;v_post = out * (1-exp(-(tp * log(1/(1 - g*(v_post - exc)/curr)))/tp))&#39;</span><span class="p">)</span>
+
+<span class="n">S1</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">S2</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">M1</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">StateMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Sp1</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+<span class="n">Sp2</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M1</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 1&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">M2</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">M2</span><span class="o">.</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Neuron 2&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_21_0.png" src="_images/starter_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting separations for inhibitory coupling</span>
+
+<span class="n">spikes</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:]))</span>
+<span class="n">Vals</span> <span class="o">=</span> <span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span> <span class="o">-</span> <span class="n">Sp2</span><span class="o">.</span><span class="n">t</span><span class="p">[:</span><span class="n">spikes</span><span class="p">]</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">Sp1</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="n">Vals</span><span class="o">/</span><span class="n">ms</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">11</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Interspike Intervals&#39;</span><span class="p">)</span>
+<span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/starter_22_0.png" src="_images/starter_22_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "brianenv"
+        },
+        kernelOptions: {
+            kernelName: "brianenv",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'brianenv'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bipartite.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bipartite networks from Chowdhary and Assisi, 2019</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jason Joby<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
