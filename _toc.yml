@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: starter
 - file: bipartite
+- file: bipartite2
