@@ -10,7 +10,7 @@ from brian2 import *
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[2]:
+# In[134]:
 
 
 # Constants
@@ -35,13 +35,14 @@ dv/dt = ((I/gamma) - v)/tau : 1
 '''
 
 
-# In[3]:
+# In[135]:
 
 
 start_scope()
 
-inh = 0.001
-exc = 0.001
+# inh = 0.001
+# exc = 0.001
+
 n = 81
 seed(21)
 
@@ -51,13 +52,13 @@ groupinit = randint(0, 99, size=n)/100
 G1.v = groupinit
 
 
-# In[4]:
+# In[136]:
 
 
 sudo = G1.i[:].reshape(9, 9)
 
 
-# In[5]:
+# In[137]:
 
 
 subgrid = -1
@@ -97,7 +98,7 @@ def getsubgrid(i,j):
         return subgrids[subgrid]
 
 
-# In[6]:
+# In[138]:
 
 
 def matcon(i,j):
@@ -127,7 +128,7 @@ def inhibconnect():
                         connectsub(i,j)
 
 
-# In[7]:
+# In[139]:
 
 
 matrix = zeros((n, n))
@@ -137,13 +138,15 @@ inhibconnect()
 imshow(matrix, origin='lower');
 
 
-# In[ ]:
+# In[140]:
 
 
-from collections import Counter
+sum(matrix.flatten())/len(matrix.flatten())
 
 
-# In[8]:
+# 20/81th of the matrix is inhibitory
+
+# In[141]:
 
 
 exc_matrix = 1 - matrix
@@ -151,8 +154,13 @@ exc_matrix = 1 - matrix
 si, ti = matrix.nonzero()
 se, te = exc_matrix.nonzero()
 
+ratio = 20/81
 
-# In[9]:
+inh = 0.8
+exc = 0.03
+
+
+# In[142]:
 
 
 # Inhibitory synapses
@@ -169,17 +177,17 @@ M1 = StateMonitor(G1, 'v', record=True)
 Sp1 = SpikeMonitor(G1)
 
 
-# In[10]:
+# In[143]:
 
 
 run(500*ms)
 
 
-# In[11]:
+# In[145]:
 
 
 alph = 0.2
-t = 4999
+t = 4000
 
 for x in range(n):
 	polar(M1.v[x][t] * 2*pi, 18, 'bo')

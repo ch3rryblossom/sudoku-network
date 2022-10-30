@@ -10,7 +10,7 @@ from brian2 import *
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[14]:
+# In[128]:
 
 
 # Constants
@@ -35,14 +35,14 @@ dv/dt = ((I/gamma) - v)/tau : 1
 '''
 
 
-# In[15]:
+# In[129]:
 
 
 start_scope()
 
-inh = 0.001
-exc = 0.001
-# n = 9
+# inh = 0.001   #
+# exc = 0.001   # moved to later, to change ratio according to network connectivity
+
 n = 16
 seed(21)
 
@@ -66,19 +66,19 @@ G1.v = groupinit
 # [G1.v, G2.v, G3.v, G4.v, G5.v, G6.v, G7.v, G8.v, G9.v] = groupinit
 
 
-# In[16]:
+# In[130]:
 
 
 sudo = G1.i[:].reshape(4,4)
 
 
-# In[17]:
+# In[131]:
 
 
 sudo
 
 
-# In[18]:
+# In[132]:
 
 
 sudo.reshape(2,8)
@@ -107,7 +107,7 @@ sudo.reshape(2,8)
 # 2 3
 # subgrids
 
-# In[19]:
+# In[133]:
 
 
 subgrid = -1
@@ -156,7 +156,7 @@ def inhibconnect():
                         connectsub(i,j)
 
 
-# In[20]:
+# In[134]:
 
 
 matrix = zeros((n, n))
@@ -166,7 +166,15 @@ inhibconnect()
 imshow(matrix, origin='lower');
 
 
-# In[21]:
+# In[135]:
+
+
+sum(matrix.flatten())/len(matrix.flatten())
+
+
+# 7/16th of the matrix is inhibitory
+
+# In[136]:
 
 
 exc_matrix = 1 - matrix
@@ -174,8 +182,13 @@ exc_matrix = 1 - matrix
 si, ti = matrix.nonzero()
 se, te = exc_matrix.nonzero()
 
+ratio = 6/16
 
-# In[22]:
+inh = 0.1
+exc = 0.01
+
+
+# In[137]:
 
 
 # Inhibitory synapses
@@ -192,17 +205,17 @@ M1 = StateMonitor(G1, 'v', record=True)
 Sp1 = SpikeMonitor(G1)
 
 
-# In[23]:
+# In[138]:
 
 
 run(500*ms)
 
 
-# In[24]:
+# In[151]:
 
 
 alph = 0.2
-t = 4999
+t = 3050
 
 for x in range(n):
 	polar(M1.v[x][t] * 2*pi, 5, 'bo')
