@@ -32,7 +32,7 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-["S1 = Synapses(G1, G2, on_pre='v = out * (1-exp(-(tp * log(1/(1 - g*(v_post - exc)/curr)))/tp))')", "S2 = Synapses(G2, G1, on_pre='v = out * (1-exp(-(tp * log(1/(1 - g*(v_post - exc)/curr)))/tp))')", '', "# S1 = Synapses(G1, G2, on_pre='v_post = v_post - exc')", "# S2 = Synapses(G2, G1, on_pre='v_post = v_post - exc')"]
+["S1 = Synapses(G1, G2, on_pre='v = out * (1-exp(-(tp * log(1/(1 - g*(v_post + exc)/curr)))/tp))')", "S2 = Synapses(G2, G1, on_pre='v = out * (1-exp(-(tp * log(1/(1 - g*(v_post + exc)/curr)))/tp))')", '', "# S1 = Synapses(G1, G2, on_pre='v_post = v_post - exc')", "# S2 = Synapses(G2, G1, on_pre='v_post = v_post - exc')"]
 ...
 ["M2 = StateMonitor(G2, 'v', record=True)", 'Sp1 = SpikeMonitor(G1)', 'Sp2 = SpikeMonitor(G2)', '', 'run(500*ms)']
 -------------------

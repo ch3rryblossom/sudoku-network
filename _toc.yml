@@ -7,3 +7,6 @@ chapters:
 - file: starter
 - file: bipartite
 - file: bipartite2
+- file: bipartite3
+- file: sudoku4x4
+- file: sudoku9x9

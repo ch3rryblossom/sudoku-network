@@ -116,7 +116,7 @@ Sp2 = SpikeMonitor(G2)
 run(500*ms)
 
 
-# In[113]:
+# In[6]:
 
 
 plot(Sp1.t/ms, Sp1.i, '.b', markersize=5)
@@ -133,7 +133,7 @@ show()
 
 # #### Excitatory connections only
 
-# In[85]:
+# In[7]:
 
 
 # Init all 100 neurons with random starting V, the groups G1 and G2 are connected with probability of 0.6 as in the paper
@@ -156,7 +156,7 @@ G1.v = group1init
 G2.v = group2init
 
 
-# In[86]:
+# In[8]:
 
 
 S1 = Synapses(G1, G2, on_pre='v = out * (1-exp(-(tp * log(1/(1 - g*(v_post + exc)/curr)))/tp))')
@@ -372,7 +372,7 @@ show()
 
 # #### 2. Above, plus excitatory connections between neurons of the same group as well.
 
-# In[4]:
+# In[33]:
 
 
 # Init all 100 neurons with random starting V
@@ -400,7 +400,7 @@ G1.v = group1init
 G2.v = group2init
 
 
-# In[5]:
+# In[34]:
 
 
 p = 0.8
@@ -418,7 +418,7 @@ sE2, tE2 = E21.nonzero()
 imshow(I12);
 
 
-# In[6]:
+# In[35]:
 
 
 # Inhibitory synapses
@@ -453,7 +453,7 @@ Sp2 = SpikeMonitor(G2)
 run(500*ms)
 
 
-# In[7]:
+# In[36]:
 
 
 plot(Sp1.t/ms, Sp1.i, '.b', markersize=5)
@@ -466,7 +466,7 @@ show()
 # !neurons of the same indices across the two groups are not necessarily connected to each other!
 
 
-# In[7]:
+# In[37]:
 
 
 polared = lambda t, M : (M.v[:,t] * 2*pi, median(M.v[:,t] * 2*pi))
@@ -486,10 +486,13 @@ polar(pld1[0], dummy, 'bo', alpha = alph)
 polar(pld2[0], dummy, 'ro', alpha = alph)
 
 polar(M1_avg, 3, 'bo')
-polar(M2_avg, 3, 'ro')
+polar(M2_avg, 3, 'ro');
 
 
-# In[34]:
+# Ignore this plot, saved here only for posterity. 
+# Please check out bipartite2.ipynb instead. (Plotting medians in the bipartite network)
+
+# In[44]:
 
 
 times = range(0, 501, 10)
@@ -499,10 +502,12 @@ M2_avgs = []
 for t in times:
         pd1 = polared(t, M1)
         pd2 = polared(t, M2)
-        M1_avgs.append(pd1[1])
-        M2_avgs.append(pd2[1])
+        M1_avgs.append(pd1[1]/(2*pi))
+        M2_avgs.append(pd2[1]/(2*pi))
 
 plot(times, M1_avgs, color='red')
 plot(times, M2_avgs, color='blue')
-plot(times, subtract(M2_avgs, M1_avgs), color='green')
+ylabel("Phase (radians)")
+xlabel("Simulation time")
+plot(times, subtract(M2_avgs, M1_avgs), color='green');
 

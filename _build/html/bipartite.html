@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Plotting medians in the bipartite network" href="bipartite2.html" />
     <link rel="prev" title="Understanding Chowdhary and Assisi, 2019" href="starter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -103,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Welcome to this Jupyter Book
                 </a>
             </li>
         </ul>
@@ -116,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Bipartite networks from Chowdhary and Assisi, 2019
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bipartite2.html">
+   Plotting medians in the bipartite network
   </a>
  </li>
 </ul>
@@ -520,7 +526,7 @@ fire synchronously either.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       Cache size for target &#39;cython&#39;: 2015771461 MB.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO       Cache size for target &#39;cython&#39;: 2579977803 MB.
 You can call clear_cache(&#39;cython&#39;) to delete all files from the cache or manually delete files in the &#39;C:\Users\admin\.cython\brian_extensions&#39; directory. [brian2]
 </pre></div>
 </div>
@@ -615,59 +621,6 @@ You can call clear_cache(&#39;cython&#39;) to delete all files from the cache or
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_cython_magic_acb90a85d5f6dba7de7d50434b3d9091.cpp
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_acb90a85d5f6dba7de7d50434b3d9091.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_acb90a85d5f6dba7de7d50434b3d9091.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_c8fa4129636020da3d1b5fb94517f06e.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_c8fa4129636020da3d1b5fb94517f06e.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_c8fa4129636020da3d1b5fb94517f06e.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_b35a23a8c22a141faacca4f48600ad0c.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_b35a23a8c22a141faacca4f48600ad0c.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_b35a23a8c22a141faacca4f48600ad0c.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_5283dec1b3bedf6e4318d5737adec93d.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_5283dec1b3bedf6e4318d5737adec93d.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_5283dec1b3bedf6e4318d5737adec93d.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_0f28ecf39439f982edf343208e5d5c10.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_0f28ecf39439f982edf343208e5d5c10.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_0f28ecf39439f982edf343208e5d5c10.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_845c4217fb331fa899c9ab9ae49291b9.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_845c4217fb331fa899c9ab9ae49291b9.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_845c4217fb331fa899c9ab9ae49291b9.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_d1db84a86d3999164a8719de54597eb8.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_d1db84a86d3999164a8719de54597eb8.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_d1db84a86d3999164a8719de54597eb8.cp310-win_amd64.exp
-Generating code
-Finished generating code
-_cython_magic_f0e12fa5d26de2bd4a8d246178ab7782.cpp
-C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_f0e12fa5d26de2bd4a8d246178ab7782.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_f0e12fa5d26de2bd4a8d246178ab7782.cp310-win_amd64.exp
-Generating code
-Finished generating code
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -733,6 +686,66 @@ Finished generating code
 <span class="n">Sp2</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
 
 <span class="n">run</span><span class="p">(</span><span class="mi">500</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_cython_magic_4607441b51658c7d0a3ad6bad592f9f4.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_4607441b51658c7d0a3ad6bad592f9f4.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_4607441b51658c7d0a3ad6bad592f9f4.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_f2cd24441f4770c7d1554f92991ddfe2.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_f2cd24441f4770c7d1554f92991ddfe2.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_f2cd24441f4770c7d1554f92991ddfe2.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_69eb54c2c4bb032888d04d3d48003be2.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_69eb54c2c4bb032888d04d3d48003be2.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_69eb54c2c4bb032888d04d3d48003be2.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_ec792c4193df982888177de149a57146.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_ec792c4193df982888177de149a57146.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_ec792c4193df982888177de149a57146.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_056e9192b0466dd0c46d35d75b47e74d.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_056e9192b0466dd0c46d35d75b47e74d.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_056e9192b0466dd0c46d35d75b47e74d.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_cdbefa30c1524cc7d783f411fe0d58bf.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_cdbefa30c1524cc7d783f411fe0d58bf.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_cdbefa30c1524cc7d783f411fe0d58bf.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_cdad8ab653bfcaaf4052d545a81e2bee.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_cdad8ab653bfcaaf4052d545a81e2bee.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_cdad8ab653bfcaaf4052d545a81e2bee.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_010b1a7ebf1e9272332bd8617cd20944.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_010b1a7ebf1e9272332bd8617cd20944.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_010b1a7ebf1e9272332bd8617cd20944.cp310-win_amd64.exp
+Generating code
+Finished generating code
+_cython_magic_6ae0dea83d598c7e5f0216c7ecaf9691.cpp
+C:\ProgramData\Anaconda3\envs\brianenv\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(14) : Warning Msg: Using deprecated NumPy API, disable it with #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+   Creating library C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_6ae0dea83d598c7e5f0216c7ecaf9691.cp310-win_amd64.lib and object C:\Users\admin\.cython\brian_extensions\Users\admin\.cython\brian_extensions\_cython_magic_6ae0dea83d598c7e5f0216c7ecaf9691.cp310-win_amd64.exp
+Generating code
+Finished generating code
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
+cl : Command line warning D9025 : overriding &#39;/W3&#39; with &#39;/w&#39;
 </pre></div>
 </div>
 </div>
@@ -1129,17 +1142,16 @@ Finished generating code
 <span class="n">polar</span><span class="p">(</span><span class="n">pld2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dummy</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">alph</span><span class="p">)</span>
 
 <span class="n">polar</span><span class="p">(</span><span class="n">M1_avg</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
-<span class="n">polar</span><span class="p">(</span><span class="n">M2_avg</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">polar</span><span class="p">(</span><span class="n">M2_avg</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x263a7055600&gt;]
-</pre></div>
-</div>
-<img alt="_images/bipartite_39_1.png" src="_images/bipartite_39_1.png" />
+<img alt="_images/bipartite_39_0.png" src="_images/bipartite_39_0.png" />
 </div>
 </div>
+<p>Ignore this plot, saved here only for posterity.
+Please check out bipartite2.ipynb instead. (Plotting medians in the bipartite network)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -1149,20 +1161,19 @@ Finished generating code
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
         <span class="n">pd1</span> <span class="o">=</span> <span class="n">polared</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">M1</span><span class="p">)</span>
         <span class="n">pd2</span> <span class="o">=</span> <span class="n">polared</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">M2</span><span class="p">)</span>
-        <span class="n">M1_avgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">M2_avgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">M1_avgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+        <span class="n">M2_avgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
 
 <span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">M1_avgs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">M2_avgs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">subtract</span><span class="p">(</span><span class="n">M2_avgs</span><span class="p">,</span> <span class="n">M1_avgs</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Phase (radians)&quot;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Simulation time&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">subtract</span><span class="p">(</span><span class="n">M2_avgs</span><span class="p">,</span> <span class="n">M1_avgs</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x18d0c5d6e60&gt;]
-</pre></div>
-</div>
-<img alt="_images/bipartite_40_1.png" src="_images/bipartite_40_1.png" />
+<img alt="_images/bipartite_41_0.png" src="_images/bipartite_41_0.png" />
 </div>
 </div>
 </section>
@@ -1201,6 +1212,13 @@ Finished generating code
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Understanding Chowdhary and Assisi, 2019</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="bipartite2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plotting medians in the bipartite network</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

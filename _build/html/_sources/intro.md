@@ -1,11 +1,11 @@
-# Welcome to your Jupyter Book
+# Welcome to this Jupyter Book
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+## Chaos in “Sudoku” Neuronal Networks with Balanced Excitatory and Inhibitory Activity
 
-Check out the content pages bundled with this sample book to see more.
+We know that in random network populations, learning leads us to a balanced state of excitation and inhibition. The resulting network dynamics are chaotic. 
+The project shall investigate the route to chaos as transitions between different states/dynamics: (fixed points, limit cycles, transitions between limit cycles) using "Sudoku" networks modelled with excitation-inhibition balance following the characteristic networks of Vogels et al., 2011.
+
+Check out the content pages bundled with this jupyter book to see more.
 
 ```{tableofcontents}
 ```
